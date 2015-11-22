@@ -1,0 +1,11 @@
+<ion-side-menu-content>
+	<ion-content>
+		<div id="content">			
+			<ion-slide-box on-slide-changed="slideHasChanged($index)" slide-interval="4000" auto-play="true" does-continue="true">
+				<ion-slide ng-repeat="b in banner">
+					<div class="flashBox" style="width:16rem;height:7.2rem;background:url({{b.img}}) center 0 no-repeat;text-align:center;background-size:16rem 7.2rem"></div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+	</ion-content>
+</ion-side-menu-content>
