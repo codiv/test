@@ -1,6 +1,6 @@
 var app=angular.module("myapp.controller",[]);
 
-app.controller("indexMain",function($scope,$http,$state,$ionicSlideBoxDelegate){
+app.controller("indexMain",function($scope,$http,$state,$ionicSlideBoxDelegate,userInfo){
 	$scope.banner=[];
 	$http({
 		method:"GET",
@@ -9,13 +9,14 @@ app.controller("indexMain",function($scope,$http,$state,$ionicSlideBoxDelegate){
 		if (data.error==0) {
 			//JSON.stringify()用来将对象序列化为JSON字符串
 			//JSON.parse() 用来将JSON数据解析为js对象
-			window.localStorage["bannerImg2"] = JSON.stringify(data.list);
-			$scope.banner = JSON.parse(window.localStorage.bannerImg);
-			window.localStorage.removeItem("bannerImg2")
-			console.log(window.localStorage)
+			userInfo.addLong('bannerImg', JSON.stringify(data.list));
+			$scope.banner = JSON.parse(userInfo.wl.bannerImg);
+			userInfo.add("uid",23)
+			// userInfo.removeLong(['a', 'b'])
+			// userInfo.wl.clear();
+			console.log(userInfo.wl)
 			$ionicSlideBoxDelegate.update();//update()重新调整参数
 		};
-		// $scope.banner = data.list;
 	}).error(function(){
 		console.log(data);
 	})
