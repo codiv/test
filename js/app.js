@@ -1,4 +1,4 @@
-var app=angular.module("myapp",["ionic","myapp.controller"]);
+var app=angular.module("myapp",["ionic","myapp.controller","myapp.services"]);
 
 app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){
 	$urlRouterProvider.otherwise("/index");
