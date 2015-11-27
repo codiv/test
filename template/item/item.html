@@ -1,0 +1,33 @@
+<ion-header-bar class="bar-positive">
+	<a ng-click="backGo()" class="button icon-left ion-ios-arrow-left button-clear button-light"></a>
+	<h1 class="title">每日一练{{num}}</h1>
+	<a class="button icon-right ion-ios-gear-outline button-clear button-light"></a>
+</ion-header-bar>
+<ion-side-menu-content>
+	<ion-content>
+		<div id="content">
+			<!-- <ul id="co-item" style="">
+				<li style="background-color:red; height:100px;" ng-click="goItem(1)">1</li>
+				<li style="background-color:yellow; height:150px;" ng-click="goItem(2)">2</li>
+				<li style="background-color:red; height:100px;" ng-click="goItem(3)">3</li>
+				<li style="background-color:yellow; height:150px;" ng-click="goItem(4)">4</li>
+			</ul> -->
+
+			<ion-slide-box does-continue="true" show-pager="true" auto-play="true" on-slide-changed="go_changed(index)"  active-slide="index" pager-click="go(index)">
+				<ion-slide>1</ion-slide>
+				<ion-slide>2</ion-slide>
+				<ion-slide>3</ion-slide>
+				<ion-slide>4</ion-slide>
+			</ion-slide-box>
+
+			<div>
+				<ul>
+					<li pager-click(="1")>slideCount() </li>
+					<li pager-click="2">2</li>
+					<li pager-click="3">3</li>
+					<li pager-click="4">4</li>
+				</ul>
+			</div>
+		</div>
+	</ion-content>
+</ion-side-menu-content>

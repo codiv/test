@@ -12,9 +12,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider){
 			},
 			"main@index":{
 				templateUrl:"template/main.html"
-			},
-			"sider@index":{
-				templateUrl:"template/sider.html"
+			}
+		}
+	})
+	.state("index.item",{
+		url:"/item",
+		views:{
+			"main@index":{
+				templateUrl:"template/item/item.html",
+				controller:"goItem"
 			}
 		}
 	})
